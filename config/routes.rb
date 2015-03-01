@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'crews/index'
+
   resources :players
   resources :games
   resources :crews
