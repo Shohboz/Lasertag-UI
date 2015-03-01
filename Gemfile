@@ -26,6 +26,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # puma web server
 gem 'puma'
 
+group :development do
+	# Entity-Relationship Diagrams for Rails applications
+#	gem "rails-erd"
+	gem "railroady"
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
