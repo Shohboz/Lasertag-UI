@@ -1,5 +1,7 @@
 class PlayersController < ApplicationController
   before_action :set_player, only: [:show, :edit, :update, :destroy]
+  skip_before_filter :verify_authenticity_token, :only => :update
+  before_filter :verify_custom_authenticity_token, :only => :update
 
   # GET /players
   # GET /players.json
@@ -70,5 +72,9 @@ class PlayersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def player_params
       params.require(:player).permit(:name)
+    end
+
+    def verify_custom_authenticity_token
+    # checks whether the request comes from a trusted source      
     end
 end
