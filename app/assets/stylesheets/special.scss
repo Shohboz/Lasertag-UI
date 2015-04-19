@@ -1,0 +1,132 @@
+@import "config";
+
+.top-bar {
+
+  border: 0;
+  border-bottom: 1px solid #273c44;
+
+  .notifications {
+    .count {
+      position: absolute;
+      top: -7px;
+      left: 58%;
+      padding: 0px 5px;
+      border-radius: 30px;
+      line-height: 16px;
+      text-align: center;
+      font-size: 10px;
+      border-width: 2px;
+      border-style: solid;
+      color: #fff;
+      background: #E60404 !important;
+      border-color: #555;
+    }
+    .notification-item .btn-group>a {
+      color: #fff;
+    }
+    &>ul li {
+      //margin: 0;
+      padding: 0;
+      display: inline;
+      margin-left: 25px;
+    }
+    &>ul, ol {
+      margin-top: 10px;
+    }
+  }  
+}
+.left-sidebar {
+  padding-right: 0;
+  padding-left: 0;
+  display: block !important;
+  overflow: visible !important;
+
+  ul, ol {
+    margin-top: 0;
+  }
+  li a{
+    background-color: #304A54;
+    color: #fff;
+    padding: 10px 0 10px 15px;
+    display: block;
+    text-decoration: none;
+  }
+}
+.container {
+  max-width: 100%;
+  width: 100%;
+}
+.content-wrapper {
+  background-color: #fff;
+  padding: 15px 30px;
+}
+ul.main-menu {
+  padding-left: 0;
+  list-style-type: none;
+  .sub-menu {
+    padding-left: 0;
+    li a {
+      padding-left: 33px;
+    }
+  }
+}
+.top-general-alert {
+  padding: 10px 15px;
+  margin-bottom: 0;
+  border: none;
+  text-align: center;
+}
+.alert {
+  border-radius: 0;
+}
+.bottom {
+  margin-top: -10px;
+}
+ul.main-menu>li .toggle-icon {
+  font-size: 14px;
+  width: 10px;
+  position: absolute;
+  right: 10px;
+  top: 13px;
+  text-shadow: none;
+}
+
+/* Side Navigation */
+
+@media(min-width:768px) {
+    .side-nav {
+        position: fixed;
+        top: $navbar-height + 8px;
+        left: $sidebar-width;
+        width: $sidebar-width;
+        margin-left: -$sidebar-width;
+        border: none;
+        border-radius: 0;
+        overflow-y: auto;
+        background-color: $navbar-inverse-bg;
+        bottom: 0;
+        overflow-x: hidden;
+        padding-bottom: 40px;
+    }
+
+    .side-nav>li>a {
+        width: $sidebar-width;
+    }
+
+    .side-nav li a:hover,
+    .side-nav li a:focus {
+        outline: none;
+    }
+}
+
+.side-nav>li>ul {
+    padding: 0;
+}
+
+.side-nav>li>ul>li>a {
+    display: block;
+    padding: 10px 15px 10px 38px;
+    text-decoration: none;
+    color: $navbar-inverse-link-color;
+    font-size: 10pt;
+}

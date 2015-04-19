@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
+  get 'dashboard/index'
+
   get 'crews/index'
+
+  root to: 'dashboard#index', as: 'dashboard'
 
   resources :players
   resources :games

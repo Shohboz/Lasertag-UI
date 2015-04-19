@@ -8,13 +8,17 @@ gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'bootstrap-sass', '~> 3.3.4'
 gem 'sass-rails', '~> 5.0'
+gem "font-awesome-rails"
 gem 'autoprefixer-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+
+#gem "execjs"
+#gem "libv8", '3.11.8.17'
+#gem "therubyracer", :require => 'v8'
+#gem 'less-rails-bootstrap'
 
 # Hirb provides a mini view framework for console applications and uses it to improve ripl(irb)'s default inspect output.
 gem 'hirb'
