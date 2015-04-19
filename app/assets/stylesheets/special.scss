@@ -96,7 +96,7 @@ ul.main-menu>li .toggle-icon {
 @media(min-width:768px) {
     .side-nav {
         position: fixed;
-        top: $navbar-height + 8px;
+        top: $navbar-height + 6px;
         left: $sidebar-width;
         width: $sidebar-width;
         margin-left: -$sidebar-width;
@@ -129,4 +129,44 @@ ul.main-menu>li .toggle-icon {
     text-decoration: none;
     color: $navbar-inverse-link-color;
     font-size: 10pt;
+}
+
+#wrapper {
+    padding-left: 0;
+}
+
+#page-wrapper {
+    width: 100%;
+    padding: 0;
+    background-color: #fff;
+}
+
+
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 225px;
+    }
+
+    #page-wrapper {
+        padding: 10px;
+    }
+    body {
+        margin-top: 50px;
+    }
+}
+
+
+.main-header {
+  h2 {
+    display: inline-block;
+    vertical-align: middle;
+    border-right: 1px solid #ccc;
+    margin: 0;
+    padding-right: 10px;
+    margin-right: 10px;
+  }
+}
+
+body {
+  margin-top: 50px;
 }
