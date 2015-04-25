@@ -35,6 +35,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # puma web server
 gem 'puma'
 
+# Gretel is a Ruby on Rails plugin that makes it easy yet flexible to create breadcrumbs.
+gem 'gretel'
+
 group :development do
 	# Entity-Relationship Diagrams for Rails applications
 #	gem "rails-erd"
