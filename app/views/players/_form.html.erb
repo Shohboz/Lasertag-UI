@@ -13,13 +13,15 @@
 
   <div class="field form-group">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: "form-control" %>
   </div>
   <div class="field form-group">
     <%= f.label :crew_id %><br>
-    <%= f.text_field :crew_id %>
+    <%= f.number_field :crew_id, class: "form-control" %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+  <%= button_tag(type: 'submit', class: "btn btn-default") do %>
+    <i class="fa fa-fw fa-save"></i> Save
+  <% end %>
+
 <% end %>

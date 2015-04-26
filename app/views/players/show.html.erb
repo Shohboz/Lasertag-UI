@@ -2,10 +2,24 @@
 
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @player.name %>
-</p>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><i class="fa fa-eye fa-fw"></i> Анкета игрока</h3>
+  </div>
+  <div class="panel-body">
+    <ul style="padding-left: 0px;">
+    	<li class="list-group-item">
+    		<strong>Name:</strong>
+			<%= @player.name %>
+    	</li>
+    	<li class="list-group-item">
+    		<strong>Crew id:</strong>
+			<%= @player.crew_id %>
+		</li>
+	</ul>
+
+	</div>
+</div>
 
 <%= link_to 'Edit', edit_player_path(@player) %> |
 <%= link_to 'Back', players_path %>
