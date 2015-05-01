@@ -11,6 +11,15 @@ crumb :player do |player|
   parent :players
 end
 
+crumb :crews do
+  link "Команды", crews_path
+end
+
+crumb :crew do |crew|
+  link crew.id, crew
+  parent :crews
+end
+
 # crumb :projects do
 #   link "Projects", projects_path
 # end

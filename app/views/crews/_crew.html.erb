@@ -1,0 +1,14 @@
+<li class="list-group-item">
+  <%= link_to crew do %>
+    <%= crew.name %>
+  <% end %>
+  <%= link_to crew, method: :delete, data: { confirm: 'Are you sure?' }, class: "pull-right" do %>
+    <i class="fa fa-fw fa-remove"></i>
+  <% end %>
+  <%= link_to edit_crew_path(crew), class: "pull-right" do %>
+    <i class="fa fa-fw fa-edit"></i>
+  <% end %>
+  <%= link_to crew, class: "pull-right" do %>
+    <i class="fa fa-fw fa-eye"></i>
+  <% end %>
+</li>

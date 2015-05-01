@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'crews/show'
+
   get 'dashboard/index'
 
   get 'crews/index'

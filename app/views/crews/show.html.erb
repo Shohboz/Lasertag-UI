@@ -1,0 +1,25 @@
+<% breadcrumb @crew %>
+
+<p id="notice"><%= notice %></p>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><i class="fa fa-eye fa-fw"></i> Анкета команды</h3>
+  </div>
+  <div class="panel-body">
+    <ul style="padding-left: 0px;">
+    	<li class="list-group-item">
+    		<strong>Name:</strong>
+			<%= @crew.name %>
+    	</li>
+    	<li class="list-group-item">
+    		<strong>Game id:</strong>
+			<%= @crew.game_id %>
+		</li>
+	</ul>
+
+	</div>
+</div>
+
+<%= link_to 'Edit', edit_crew_path(@crew) %> |
+<%= link_to 'Back', crews_path %>
