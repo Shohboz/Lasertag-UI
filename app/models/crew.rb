@@ -1,5 +1,4 @@
 class Crew < ActiveRecord::Base
-	#belongs_to :game
-	has_and_belongs_to_many :games
-	has_many :players
+	has_many :subscriptions
+	has_many :games, through: :subscriptions
 end
