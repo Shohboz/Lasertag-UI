@@ -12,10 +12,18 @@
     		<strong>Name:</strong>
 			<%= @player.name %>
     	</li>
-    	<li class="list-group-item">
+      <li class="list-group-item">
+        <strong>id:</strong>
+        <%= @player.id %>
+      </li>
+    	<!--li class="list-group-item">
     		<strong>Crew id:</strong>
-			<%= @player.crew_id %>
-		</li>
+			{{ @player.crew_id }}
+		</li-->
+    <li class="list-group-item">
+        <strong>Total points:</strong>
+        <%= @player.total_points %>
+    </li>
 	</ul>
 
 	</div>

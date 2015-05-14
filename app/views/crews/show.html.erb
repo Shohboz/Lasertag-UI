@@ -10,12 +10,20 @@
     <ul style="padding-left: 0px;">
     	<li class="list-group-item">
     		<strong>Name:</strong>
-			<%= @crew.name %>
+			  <%= @crew.name %>
     	</li>
-    	<li class="list-group-item">
+    	<!--li class="list-group-item">
     		<strong>Game id:</strong>
-			<%= @crew.game_id %>
-		</li>
+			{{ @crew.game_id }}
+		</li-->
+    <li class="list-group-item">
+        <strong>id:</strong>
+        <%= @crew.id %>
+      </li>
+    <li class="list-group-item">
+      <strong>Total points:</strong>
+      <%= @crew.total_points %>
+    </li>
 	</ul>
 
 	</div>
