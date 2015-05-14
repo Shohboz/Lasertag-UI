@@ -1,4 +1,4 @@
 class Player < ActiveRecord::Base
-	belongs_to :crew
-	belongs_to :game
+	has_many :subscriptions
+	has_many :games, through: :subscriptions
 end

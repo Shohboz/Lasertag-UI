@@ -6,7 +6,7 @@ namespace :visualize do
 
   desc "Full models diagram."
   task M: :environment do
-  	sh 'railroady -a -o doc/models.dot -M'
+  	sh 'railroady -a -o doc/models.dot -M --join'
   	sh 'dot -Tpng doc/models.dot > doc/models.png'
   end
 
