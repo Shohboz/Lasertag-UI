@@ -1,0 +1,66 @@
+<% breadcrumb @game %>
+
+<p id="notice"><%= notice %></p>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><i class="fa fa-eye fa-fw"></i> Статистика игры</h3>
+  </div>
+  <div class="panel-body">
+    <ul style="padding-left: 0px;">
+      <li class="list-group-item">
+        <strong>id:</strong>
+        <%= @game.id %>
+      </li>
+      <li class="list-group-item">
+        <strong>Start at:</strong>
+        <%= @game.start_at %>
+      </li>
+	</ul>
+
+  </div>
+</div>
+
+<div class="row">
+  <% @game.crews.group(:id).each do |crew| %>
+  <div class="col-lg-6">
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          <i class="fa fa-flag fa-fw"></i> <%= crew.name %>
+        </h3>
+      </div>
+      <div class="panel-body">
+      <ul style="padding-left: 0px;">    
+    
+      <% crew.subscriptions.each do |subscriber| %>
+
+        <li class="list-group-item">
+          <%= subscriber.player.name %>
+
+          <%= link_to subscriber.player, method: :delete, data: { confirm: 'Are you sure?' }, class: "pull-right" do %>
+            <i class="fa fa-fw fa-remove"></i>
+          <% end %>
+          <%= link_to edit_player_path(subscriber.player), class: "pull-right" do %>
+            <i class="fa fa-fw fa-edit"></i>
+          <% end %>
+          <%= link_to subscriber.player, class: "pull-right" do %>
+            <i class="fa fa-fw fa-eye"></i>
+          <% end %>
+
+          <span class="badge"><%= subscriber.points %></span>
+
+        </li>
+
+      <% end %>
+
+      </ul>
+
+      </div>
+    </div>
+
+  </div>
+
+  <% end %>
+</div>

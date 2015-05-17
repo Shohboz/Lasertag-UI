@@ -1,0 +1,22 @@
+<%= form_for(@game) do |f| %>
+  <% if @game.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@game.errors.count, "error") %> prohibited this game from being saved:</h2>
+
+      <ul>
+      <% @game.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= f.label :start_at %><br>
+    <%= f.text_field :start_at, class: "form-control" %>
+  </div>
+
+  <%= button_tag(type: 'submit', class: "btn btn-default") do %>
+    <i class="fa fa-fw fa-save"></i> Save
+  <% end %>
+<% end %>

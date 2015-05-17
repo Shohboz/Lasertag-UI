@@ -20,6 +20,14 @@ crumb :crew do |crew|
   parent :crews
 end
 
+crumb :games do
+  link "Игры", games_path
+end
+
+crumb :game do |game|
+  link game.id, game
+  parent :games
+end
 # crumb :projects do
 #   link "Projects", projects_path
 # end
