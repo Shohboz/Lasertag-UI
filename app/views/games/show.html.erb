@@ -1,6 +1,6 @@
 <% breadcrumb @game %>
 
-<p id="notice"><%= notice %></p>
+<p id="notice"><%= flash_messages %></p>
 
 <div class="panel panel-default">
   <div class="panel-heading">
@@ -29,11 +29,6 @@
       <div class="panel-heading">
         <h3 class="panel-title">
           <i class="fa fa-flag fa-fw"></i> <%= crew.name %>
-
-          <!-- link_to subscription_path(@game.subscriptions.where(crew_id: crew)), method: :delete_all, data: { confirm: 'Are you sure?' }, class: "pull-right" do -->
-          <!-- link_to delete_all_subscriptions_path(crew_id: crew, game_id: @game), method: :delete_all, data: { confirm: 'Are you sure?' }, class: "pull-right" do %>
-            <i class="fa fa-fw fa-remove"></i>
-          < end -->
 
           <%= link_to delete_all_subscriptions_path(game_id: @game, crew_id: crew), controller: 'subscriptions', action: 'delete_all', method: 'delete_all', data: { confirm: 'Are you sure?' }, class: "pull-right" do %>
             <i class="fa fa-fw fa-remove"></i>

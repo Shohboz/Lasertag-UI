@@ -1,6 +1,6 @@
 <% breadcrumb @player %>
 
-<p id="notice"><%= notice %></p>
+<p id="notice"><%= flash_messages %></p>
 
 <div class="panel panel-default">
   <div class="panel-heading">
@@ -16,16 +16,11 @@
         <strong>id:</strong>
         <%= @player.id %>
       </li>
-    	<!--li class="list-group-item">
-    		<strong>Crew id:</strong>
-			{{ @player.crew_id }}
-		</li-->
-    <li class="list-group-item">
-        <strong>Total points:</strong>
-        <%= @player.total_points %>
-    </li>
-	</ul>
-
+      <li class="list-group-item">
+          <strong>Total points:</strong>
+          <%= @player.total_points %>
+      </li>
+	  </ul>
 	</div>
 </div>
 
