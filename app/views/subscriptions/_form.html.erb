@@ -1,0 +1,47 @@
+<%= form_for(@subscription) do |f| %>
+  <% if @subscription.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@subscription.errors.count, "error") %> prohibited this subscription from being saved:</h2>
+
+      <ul>
+      <% @subscription.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title"><i class="fa fa-eye fa-fw"></i> Статистика игры</h3>
+    </div>
+    <div class="panel-body">
+
+    <%= debug params %>
+
+    <div class="field form-group">
+      <% if params[:crew_id] %>
+        <%= f.label :player_id %><br>
+        <%= f.text_field :player_id, class: "form-control" %>
+      <% else %>  
+        <%= f.label :crew_id %><br>
+        <%= f.text_field :crew_id, class: "form-control" %>
+      <% end %>
+    </div>
+
+    <%= button_tag(type: 'submit', class: "btn btn-default") do %>
+      <% if params[:crew_id] %>
+        <%= f.hidden_field :crew_id, value: params[:crew_id] %>
+      <% end %>
+      <%= f.hidden_field :game_id, value: params[:game_id] %>
+      <i class="fa fa-fw fa-save"></i> Save
+    <% end %>
+
+    </div>
+  </div>
+
+  <!--div class="actions">    
+    <%= f.submit %>
+  </div-->
+
+<% end %>

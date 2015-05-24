@@ -29,38 +29,62 @@
       <div class="panel-heading">
         <h3 class="panel-title">
           <i class="fa fa-flag fa-fw"></i> <%= crew.name %>
+
+          <!-- link_to subscription_path(@game.subscriptions.where(crew_id: crew)), method: :delete_all, data: { confirm: 'Are you sure?' }, class: "pull-right" do -->
+          <!-- link_to delete_all_subscriptions_path(crew_id: crew, game_id: @game), method: :delete_all, data: { confirm: 'Are you sure?' }, class: "pull-right" do %>
+            <i class="fa fa-fw fa-remove"></i>
+          < end -->
+
+          <%= link_to delete_all_subscriptions_path(game_id: @game, crew_id: crew), controller: 'subscriptions', action: 'delete_all', method: 'delete_all', data: { confirm: 'Are you sure?' }, class: "pull-right" do %>
+            <i class="fa fa-fw fa-remove"></i>
+          <% end %>
+
         </h3>
       </div>
       <div class="panel-body">
-      <ul style="padding-left: 0px;">    
-    
-      <% crew.subscriptions.each do |subscriber| %>
+        <ul style="padding-left: 0px;">    
+      
+        <% crew.subscriptions.where(game_id: @game).each do |subscriber| %>
 
-        <li class="list-group-item">
-          <%= subscriber.player.name %>
+          <% if subscriber.player %>
+            <li class="list-group-item">
+              <%= subscriber.player.name %>
+              
+              <%= link_to subscription_path(subscriber), method: :delete, data: { confirm: 'Are you sure?' }, class: "pull-right" do %>
+                <i class="fa fa-fw fa-remove"></i>
+              <% end %>
+              <%= link_to edit_subscription_path(subscriber), class: "pull-right" do %>
+                <i class="fa fa-fw fa-edit"></i>
+              <% end %>
+              <%= link_to subscriber, class: "pull-right" do %>
+                <i class="fa fa-fw fa-eye"></i>
+              <% end %>
 
-          <%= link_to subscriber.player, method: :delete, data: { confirm: 'Are you sure?' }, class: "pull-right" do %>
-            <i class="fa fa-fw fa-remove"></i>
-          <% end %>
-          <%= link_to edit_player_path(subscriber.player), class: "pull-right" do %>
-            <i class="fa fa-fw fa-edit"></i>
-          <% end %>
-          <%= link_to subscriber.player, class: "pull-right" do %>
-            <i class="fa fa-fw fa-eye"></i>
-          <% end %>
+              <span class="badge"><%= subscriber.points %></span>
+            </li>
+           <% end %> 
 
-          <span class="badge"><%= subscriber.points %></span>
-
-        </li>
-
-      <% end %>
-
-      </ul>
-
+        <% end %>
+        </ul>
       </div>
+
+      <div class="btn-group">
+        <%= link_to new_subscription_path(crew_id: crew.id, game_id: @game.id), class: "btn", action: "create" do %>
+          <i class="fa fa-fw fa-user-plus"></i>
+          <span>Добавить игрока</span>
+        <% end %>
+      </div>
+
     </div>
 
   </div>
 
   <% end %>
 </div>
+
+<div class="btn-group">
+    <%= link_to new_subscription_path(game_id: @game.id), class: "btn", action: "create" do %>
+      <i class="fa fa-fw fa-user-plus"></i>
+      <span>Добавить команду</span>
+    <% end %>
+  </div>

@@ -10,6 +10,15 @@ Rails.application.routes.draw do
   resources :players
   resources :games
   resources :crews
+  resources :subscriptions
+
+  match "/subscriptions/delete_all" => "subscriptions#delete_all", :via => :post
+
+  resources :subscriptions do
+    collection do
+      delete :delete_all
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
