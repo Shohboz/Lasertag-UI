@@ -21,8 +21,15 @@
       background: #E60404 !important;
       border-color: #555;
     }
-    .notification-item .btn-group>a {
-      color: #fff;
+    .notification-item {
+      a {
+        color: #fff;
+      }
+      .dropdown-menu {
+        a {
+          color: #000;
+        }
+      }
     }
     &>ul li {
       //margin: 0;

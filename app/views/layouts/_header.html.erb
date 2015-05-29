@@ -25,8 +25,29 @@
 												<i class="fa fa-bell"></i><span class="count">8</span>
 												<span class="circle"></span>
 											</a>
-										</div>										
+										</div>
 									</li>
+									<% if user_signed_in? %>
+
+
+									<li class="notification-item dropdown">
+					                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-user"></i> <%= current_user.email %> <b class="caret"></b></a>
+					                    <ul class="dropdown-menu">
+					                        <li>
+					                            <%= link_to destroy_user_session_path, :method => :delete do %>
+													<i class="fa fa-fw fa-power-off"></i> Выйти
+												<% end %>
+					                        </li>
+					                    </ul>
+					                </li>
+
+									<% else %>
+										<li class="notification-item">
+									    	<%= link_to new_user_session_path do %>
+												<i class="fa fa-user"></i> Войти
+											<% end %>
+										</li>
+									<% end %>									
 								</ul>
 							</div>
 						</div>
