@@ -24,6 +24,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'hirb'
 
 gem 'devise'
+gem 'devise-bootstrap-views'
 
 gem 'composite_primary_keys', '>= 8'
 

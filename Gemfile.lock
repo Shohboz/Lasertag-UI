@@ -70,6 +70,7 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    devise-bootstrap-views (0.0.5)
     erubis (2.7.0)
     execjs (2.3.0)
     font-awesome-rails (4.3.0.0)
@@ -186,6 +187,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   composite_primary_keys (>= 8)
   devise
+  devise-bootstrap-views
   font-awesome-rails
   gretel
   hirb
