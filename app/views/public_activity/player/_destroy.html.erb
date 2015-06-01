@@ -1,0 +1,6 @@
+<% if activity.trackable %>
+	<%= link_to activity.trackable.name, activity.trackable %>
+<% else %>
+	<i class="fa fa-fw fa-user-times"></i>
+	Player has been destroyed
+<% end %>

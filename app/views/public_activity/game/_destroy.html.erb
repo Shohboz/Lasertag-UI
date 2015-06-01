@@ -1,0 +1,6 @@
+<% if activity.trackable %>
+	<%= link_to activity.trackable.id, activity.trackable %>
+<% else %>
+	<i class="fa fa-fw fa-remove"></i>
+	Game has been destroyed
+<% end %>

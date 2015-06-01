@@ -27,6 +27,8 @@ gem 'devise'
 gem 'devise-bootstrap-views'
 
 gem 'composite_primary_keys', '>= 8'
+# public_activity provides easy activity tracking for your ActiveRecord, Mongoid 3 and MongoMapper models in Rails 3 and 4.
+gem 'public_activity'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

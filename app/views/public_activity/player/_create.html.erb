@@ -1,0 +1,7 @@
+<% if activity.trackable %>
+	<i class="fa fa-fw fa-user-plus"></i>
+	Player <%= link_to activity.trackable.name, activity.trackable %> was added
+<% else %>
+	<i class="fa fa-fw fa-user-times"></i>
+	Player has been removed
+<% end %>

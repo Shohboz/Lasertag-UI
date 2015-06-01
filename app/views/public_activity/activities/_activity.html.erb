@@ -1,0 +1,5 @@
+<li class="list-group-item">
+	<span class="badge"><%= time_ago_in_words(activity.updated_at) %></span>
+	<%= render_activity activity %> by
+	<%= activity.owner.email if activity.owner %>
+</li>

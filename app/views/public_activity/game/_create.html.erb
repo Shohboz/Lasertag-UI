@@ -1,0 +1,7 @@
+<% if activity.trackable %>
+	<i class="fa fa-gamepad fa-fw"></i>
+	Game <%= link_to activity.trackable.id, activity.trackable %> was added
+<% else %>
+	<i class="fa fa-fw fa-user-times"></i>
+	Game has been removed
+<% end %>

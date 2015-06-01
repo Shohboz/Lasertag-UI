@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   root to: 'dashboard#index', as: 'dashboard'
 
   resources :players
+  resources :activities
   resources :games
   resources :crews
   resources :subscriptions

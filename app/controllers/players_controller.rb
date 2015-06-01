@@ -30,6 +30,7 @@ class PlayersController < ApplicationController
 
     respond_to do |format|
       if @player.save
+        #@player.create_activity :create, owner: current_user
         format.html { redirect_to @player, notice: 'Player was successfully created.' }
         format.json { render :show, status: :created, location: @player }
       else
@@ -57,6 +58,7 @@ class PlayersController < ApplicationController
   # DELETE /players/1.json
   def destroy
     @player.destroy
+    #@player.create_activity :destroy, owner: current_user
     respond_to do |format|
       format.html { redirect_to players_url, notice: 'Player was successfully destroyed.' }
       format.json { head :no_content }

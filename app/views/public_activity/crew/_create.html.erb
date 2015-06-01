@@ -1,0 +1,7 @@
+<% if activity.trackable %>
+	<i class="fa fa-flag fa-fw"></i>
+	Crew <%= link_to activity.trackable.name, activity.trackable %> was added
+<% else %>
+	<i class="fa fa-remove fa-fw"></i>
+	Crew has been removed
+<% end %>
