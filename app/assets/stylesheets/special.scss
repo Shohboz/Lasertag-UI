@@ -26,6 +26,9 @@
         color: #fff;
       }
       .dropdown-menu {
+        right: 0;
+        left: auto;
+        min-width: 200px;
         a {
           color: #000;
         }

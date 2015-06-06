@@ -31,8 +31,11 @@
 
 
 									<li class="notification-item dropdown">
-					                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-user"></i> <%= current_user.email %> <b class="caret"></b></a>
+					                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-user"></i> <b class="caret"></b></a>
 					                    <ul class="dropdown-menu">
+					                    	<li>
+					                    		<a href="#"><i class="fa fa-fw fa-envelope"></i> <%= current_user.email %></a>
+					                    	</li>
 					                        <li>
 					                            <%= link_to destroy_user_session_path, :method => :delete do %>
 													<i class="fa fa-fw fa-power-off"></i> Выйти

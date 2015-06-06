@@ -1,0 +1,14 @@
+<li class="list-group-item">
+  <%= link_to subscription do %>
+    <%= subscription.id %>
+  <% end %>
+  <%= link_to subscription, method: :delete, data: { confirm: 'Are you sure?' }, class: "pull-right" do %>
+    <i class="fa fa-fw fa-remove"></i>
+  <% end %>
+  <%= link_to edit_subscription_path(subscription), class: "pull-right" do %>
+    <i class="fa fa-fw fa-edit"></i>
+  <% end %>
+  <%= link_to subscription, class: "pull-right" do %>
+    <i class="fa fa-fw fa-eye"></i>
+  <% end %>
+</li>

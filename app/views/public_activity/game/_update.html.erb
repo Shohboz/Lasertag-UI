@@ -1,0 +1,7 @@
+<% if activity.trackable %>
+	<i class="fa fa-fw fa-refresh"></i>
+	Game <%= link_to activity.trackable.name, activity.trackable %> was updated
+<% else %>
+	<i class="fa fa-fw fa-remove"></i>
+	Game has been removed
+<% end %>

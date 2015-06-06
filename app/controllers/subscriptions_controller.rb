@@ -14,22 +14,27 @@ class SubscriptionsController < ApplicationController
 
   # GET /subscriptions/new
   def new
+    game = Game.find(params[:game_id])
+    @players = Player.where.not(id: game.players)
+    @crews = Crew.where.not(id: game.crews)
     @subscription = Subscription.new
   end
 
   # GET /subscriptions/1/edit
   def edit
+    game = @subscription.game
+    @players = Player.where.not(id: game.players)
+    @crews = Crew.where.not(id: @subscription.crew_id)
   end
 
   # POST /subscriptions
   # POST /subscriptions.json
   def create
     @subscription = Subscription.new(subscription_params)
-    @game = Game.find(subscription_params[:game_id])
-
+    @subscription.activity :params => {:composite_key => "#{@subscription.game_id},#{@subscription.player_id}"}
     respond_to do |format|
       if @subscription.save
-        format.html { redirect_to @game, notice: 'Subscription was successfully created.' }
+        format.html { redirect_to @subscription.game, notice: 'Subscription was successfully created.' }
         format.json { render :show, status: :created, location: @subscription }
       else
         format.html { render :new }
@@ -41,9 +46,10 @@ class SubscriptionsController < ApplicationController
   # PATCH/PUT /subscriptions/1
   # PATCH/PUT /subscriptions/1.json
   def update
+    @subscription.activity :params => {:composite_key => "#{@subscription.game_id},#{@subscription.player_id}"}
     respond_to do |format|
-      if @subscription.update(subscription_params)
-        format.html { redirect_to @subscription, notice: 'Subscription was successfully updated.' }
+      if @subscription.update(subscription_params)        
+        format.html { redirect_to @subscription.game, notice: 'Subscription was successfully updated.' }
         format.json { render :show, status: :ok, location: @subscription }
       else
         format.html { render :edit }

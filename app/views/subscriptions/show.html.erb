@@ -1,4 +1,33 @@
 <p id="notice"><%= flash_messages %></p>
 
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><i class="fa fa-eye fa-fw"></i> Просмотр связи</h3>
+  </div>
+  <div class="panel-body">
+    <ul style="padding-left: 0px;">
+    	<li class="list-group-item">
+    		<strong>Game id:</strong>
+			<%= @subscription.game.id %>
+    	</li>
+
+	    <li class="list-group-item">
+	        <strong>Player name:</strong>
+	        <%= @subscription.player.name if @subscription.player %>
+	    </li>
+
+	    <li class="list-group-item">
+	        <strong>Crew name:</strong>
+	        <%= @subscription.crew.name if @subscription.crew %>
+	    </li>
+
+	    <li class="list-group-item">
+	          <strong>Points:</strong>
+	          <%= @subscription.points || 0 %>
+	    </li>
+	  </ul>
+	</div>
+</div>
+
 <%= link_to 'Edit', edit_subscription_path(@subscription) %> |
 <%= link_to 'Back', :back %>
