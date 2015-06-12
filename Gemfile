@@ -22,6 +22,10 @@ gem 'coffee-rails', '~> 4.1.0'
 
 # Hirb provides a mini view framework for console applications and uses it to improve ripl(irb)'s default inspect output.
 gem 'hirb'
+# A Scope & Engine based, clean, powerful, customizable and sophisticated paginator for modern web app frameworks and ORMs
+gem 'kaminari'
+
+gem 'haml', '~> 4.0.5'
 
 gem 'devise'
 gem 'devise-bootstrap-views'
@@ -32,6 +36,7 @@ gem 'public_activity'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'bootstrap-datetimepicker-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

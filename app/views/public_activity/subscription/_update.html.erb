@@ -1,5 +1,5 @@
 <% if activity.parameters && activity.parameters[:composite_key] %>
-	<i class="fa fa-refresh fa-fw"></i>
+	<i class="fa fa-refresh fa-fw fa"></i>
 	<% if activity.parameters[:composite_key].split(',').length == 2 %>
 	<% sub = Subscription.find(activity.parameters[:composite_key]) %>
 		Subscription <%= link_to sub.id, sub %> was updated

@@ -25,10 +25,14 @@
       a {
         color: #fff;
       }
+      a:hover, a:focus {
+        text-decoration: none !important;
+      }
       .dropdown-menu {
         right: 0;
         left: auto;
         min-width: 200px;
+        top: 30px;
         a {
           color: #000;
         }
@@ -175,6 +179,15 @@ ul.main-menu>li .toggle-icon {
     padding-right: 10px;
     margin-right: 10px;
   }
+}
+
+.bootstrap-datetimepicker-widget {
+    ul {
+      padding-left: 0;
+    }
+    .accordion-toggle {
+      cursor: pointer;
+    }
 }
 
 body {

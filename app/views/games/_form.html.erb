@@ -11,12 +11,25 @@
     </div>
   <% end %>
 
-  <div class="field form-group">
+  <div class="field form-group" id="hh1">
     <%= f.label :start_at %><br>
-    <%= f.text_field :start_at, class: "form-control" %>
+    <div class="input-group input-append date" id="datepicker">
+      <span class="add-on input-group-addon">
+        <i class="fa fa-clock-o fa-fw" data-time-icon="fa fa-clock-o fa-fw" data-date-icon="fa fa-calendar fa-fw"></i>
+      </span>
+      <%= f.text_field :start_at, :as => :string, "data-format" => "yyyy/MM/dd hh:mm:ss", class: "form-control" %>      
+    </div>
   </div>
 
   <%= button_tag(type: 'submit', class: "btn btn-default") do %>
     <i class="fa fa-fw fa-save"></i> Save
   <% end %>
 <% end %>
+
+<script type="text/javascript">
+  $(function() {
+    $('#datepicker').datetimepicker({
+      language: 'ru'
+    });
+  });
+</script>
