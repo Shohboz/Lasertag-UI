@@ -4,7 +4,13 @@
 
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title"><i class="fa fa-eye fa-fw"></i> Статистика игры</h3>
+    <h3 class="panel-title"><i class="fa fa-eye fa-fw"></i> Статистика игры
+
+      <%= link_to edit_game_path(@game), class: "pull-right" do %>
+        <i class="fa fa-fw fa-edit"></i>
+      <% end %>
+
+    </h3>
   </div>
   <div class="panel-body">
     <ul style="padding-left: 0px;">
