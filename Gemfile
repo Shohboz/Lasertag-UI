@@ -27,7 +27,7 @@ gem 'kaminari'
 
 gem 'haml', '~> 4.0.5'
 
-gem 'devise'
+gem 'devise', '~> 3.5.1'
 gem 'devise-bootstrap-views'
 
 gem 'composite_primary_keys', '>= 8'
@@ -45,7 +45,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # puma web server
-gem 'puma'
+#gem 'puma'
 
 # Gretel is a Ruby on Rails plugin that makes it easy yet flexible to create breadcrumbs.
 gem 'gretel'
